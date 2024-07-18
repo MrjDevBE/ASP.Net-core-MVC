@@ -1,0 +1,23 @@
+﻿@model Plane
+
+<h1>Edit Plane</h1>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label for="Code">Code:</label>
+        <input asp-for="Code" class="form-control" />
+        <span asp-validation-for="Code" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Airline">Airline:</label>
+        <input asp-for="Airline" class="form-control" />
+        <span asp-validation-for="Airline" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Model">Model:</label>
+        <input asp-for="Model" class="form-control" />
+        <span asp-validation-for="Model" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>

@@ -1,0 +1,110 @@
+﻿@model IndexViewModel
+<!-- Include CSS -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/css/style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div>
+        <!-- Airport table -->
+        <h1>Airports</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width: 150px;"></th>
+                    <th style="width: 150px;">Airport Name</th>
+                    <th style="width: 200px;">Address</th>
+                    <th style="width: 200px;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var airport in Model.Airports)
+                {
+                <tr>
+                    <td></td>
+                    <td>@airport.Name</td>
+                    <td>@airport.Address</td>
+                    <td></td>
+                </tr>
+                }
+            </tbody>
+        </table>
+
+        <!-- Plane table -->
+        <h1>Planes</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width: 150px;"></th>
+                    <th style="width: 150px;">Code</th>
+                    <th style="width: 200px;">Airline</th>
+                    <th style="width: 200px;">Model</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var plane in Model.Planes)
+                {
+                    <tr>
+                        <td></td>
+                        <td>@plane.Code</td>
+                        <td>@plane.Airline</td>
+                        <td>@plane.Model</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <!-- Flight table -->
+        <h1>Flights</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width: 150px;"></th>
+                    <th style="width: 150px;">Flight</th>
+                    <th style="width: 200px;">Airport Name</th>
+                    <th style="width: 200px;">Plane</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var flight in Model.Flights)
+                {
+                    <tr>
+                        <td></td>
+                        <td>@flight.FlightNumber</td>
+                        <td>@flight.AirportName</td>
+                        <td>@flight.Plane</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <!-- Passenger Bookings table -->
+        <h1>Passenger Bookings</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width: 150px;"></th>
+                    <th style="width: 150px;">Name</th>
+                    <th style="width: 200px;">Flight</th>
+                    <th style="width: 200px;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var booking in Model.Bookings)
+                {
+                <tr>
+                    <td></td>
+                    <td>@booking.Name</td>
+                    <td>@booking.FlightNumber</td>
+                    <td></td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

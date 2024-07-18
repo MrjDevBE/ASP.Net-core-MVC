@@ -1,0 +1,36 @@
+﻿@model IEnumerable<TestUMS.Models.Flight>
+
+    @{
+    ViewData["Title"] = "Flights";
+    }
+
+    <h2>Flights</h2>
+
+    <p>
+        <a asp-action="Create">Add</a>
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Actions</th>
+                <th>Flight</th>
+                <th>Airport Name</th>
+                <th>Plane</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+                <td>@item.FlightNumber</td>
+                <td>@item.AirportName</td>
+                <td>@item.Plane</td>
+            </tr>
+            }
+        </tbody>
+    </table>

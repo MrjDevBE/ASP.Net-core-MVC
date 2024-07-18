@@ -1,0 +1,23 @@
+﻿@model Plane
+
+<h1>Delete Plane</h1>
+
+<p>Are you sure you want to delete this plane?</p>
+
+<form asp-action="DeleteConfirmed">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="Code"></label>
+        <input asp-for="Code" class="form-control" disabled />
+    </div>
+    <div class="form-group">
+        <label asp-for="Airline"></label>
+        <input asp-for="Airline" class="form-control" disabled />
+    </div>
+    <div class="form-group">
+        <label asp-for="Model"></label>
+        <input asp-for="Model" class="form-control" disabled />
+    </div>
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
